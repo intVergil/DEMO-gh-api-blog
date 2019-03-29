@@ -1,0 +1,105 @@
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: #555;
+  font-size: 10px;
+  font-family: Open Sans;
+  &:hover {
+    color: #fa8c16;
+  }
+}
+
+.Header, .Content {
+  >div {
+    margin: 0 auto;
+  }
+}
+
+.Footer {
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 576px){
+  .Header, .Content {
+    padding: 0 !important;
+    >div {
+      width: 320px;
+    }
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px){
+  .Header, .Content {
+    padding: 0 !important;
+    >div {
+      width: 536px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px){
+  .Header, .Content {
+    padding: 0 !important;
+    >div {
+      width: 668px;
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px){
+  .Header, .Content {
+    >div {
+      width: 924px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .Header, .Content {
+    >div {
+      width: 1100px;
+    }
+  }
+}
+
+.has-bg {
+  &.is-bggrey-1 { color: #ffffff;}
+  &.is-bggrey-2 { color: #fafafa;}
+  &.is-bggrey-3 { color: #f5f5f5;}
+  &.is-bggrey-4 { color: #e8e8e8;}
+  &.is-bggrey-5 { color: #d9d9d9;}
+  &.is-bggrey-6 { color: #bfbfbf;}
+  &.is-bggrey-7 { color: #8c8c8c;}
+  &.is-bggrey-8 { color: #595959;}
+  &.is-bggrey-9 { color: #262626;}
+  &.is-bggrey-0 { color: #000000;}
+}
+
+.m-is-none { margin: none;}
+.m-is-auto { margin: auto;}
+.mx-is-auto { margin: 0 auto;}
+.my-is-auto { margin: auto 0;}
+// .m-is-sm { margin: 0px 12px;}
+// .m-is-md { margin: 6px 12px;}
+// .m-is-lg { margin: 12px 24px;}
+// .m-is-xl { margin: 16px 32px;}
+// .m-is-xxl { margin: 32px 48px;}
+// .m-is-xxxl { margin: 48px 64px;}
+// .m-is-80 { margin: 80px;}
+// .m-is-64 { margin: 64px;}
+// .m-is-32 { margin: 32px;}
+// .m-is-24 { margin: 24px;}
+// .m-is-12 { margin: 12px;}
+// .mb-is-64 { margin-bottom: 64px;}
+// .mb-is-48 { margin-bottom: 48px;}
+// .mb-is-32 { margin-bottom: 32px;}
+// .mb-is-24 { margin-bottom: 24px;}
+// .mb-is-12 { margin-bottom: 12px;}
+// .mb-is-6 { margin-bottom: 6px;}

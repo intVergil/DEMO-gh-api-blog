@@ -1,0 +1,48 @@
+.black{
+    &:not(.disabled) {
+        .primary(#0a0a0a,#fff,#040404,#000,rgba(255, 255, 255, 0.25));
+    }
+}
+
+.dark{
+    &:not(.disabled) {
+        .primary(#363636,whitesmoke,#2f2f2f,#292929,rgba(255, 255, 255, 0.25));
+    }
+}
+
+.link{
+    &:not(.disabled) {
+        .primary(#7f888f,#fff,#788289,#727b82,rgba(255, 255, 255, 0.25));
+    }
+}
+
+.light{
+    &:not(.disabled) {
+        .primary(whitesmoke,#363636,#eee,#e8e8e8,rgba(255, 255, 255, 0.25));
+    }
+}
+
+.white{
+    &:not(.disabled) {
+        .primary(#fff,#0a0a0a,#f9f9f9,#f2f2f2,rgba(255, 255, 255, 0.25));
+    }
+}
+
+.disabled {
+    border-color: transparent !important;
+}
+
+.primary(@bg-color,@color,@hover,@active,@focus) {
+    &:not(.ghost) {
+        background-color: @bg-color !important;
+    }
+    border-color: transparent !important;
+    color: @color !important;
+    &:hover{ background-color: @hover !important; }
+    &:active{ background-color: @active !important; }
+    &:focus:not(:active){box-shadow: 0 0 0 0.125em @focus;}
+    &:after {
+        border: 0 none;
+        opacity: 0;
+        animation:none 0 ease 0 1 normal;}
+}
