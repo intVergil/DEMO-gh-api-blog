@@ -21,7 +21,7 @@ export default {
 
   effects: {
     *fetch({ payload }, { call, put }) {
-      const data = yield call(blogService.query, 'https://api.github.com/repos/intVergil/vergilbox/issues' );
+      const data = yield call(blogService.query, '/api/issues' );
       const years = Array.from(new Set(data.map( d => moment(d.updated_at).format('YYYY') )))
       const yearsData = years.map(x => Object.assign({year:x, count:data.filter( d => moment(d.updated_at).format('YYYY') === "2019" ).length}));
       yield put({ type: 'save' , 
@@ -30,7 +30,7 @@ export default {
     },
 
     *fetch_labels({ payload }, { call, put }) {
-      const labels = yield call(blogService.query, 'https://api.github.com/repos/intVergil/vergilbox/labels' );
+      const labels = yield call(blogService.query, '/api/labels' );
       yield put({ type: 'save' , 
         payload: { labels: labels }
       });

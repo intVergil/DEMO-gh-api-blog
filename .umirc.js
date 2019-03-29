@@ -6,6 +6,13 @@ export default {
   theme: "./src/theme/theme.js",
   base: '/gh-api-blog/',
   publicPath: '/gh-api-blog/',
+  proxy: {
+    "/api": {
+      "target": "https://api.github.com/repos/intVergil/gh-api-blog/",
+      "changeOrigin": true,
+      "pathRewrite": { "^/api" : "" }
+    }
+  },
   alias: {
     utils: resolve(__dirname,"./src/utils"),
     assets: resolve(__dirname,"./src/assets"),

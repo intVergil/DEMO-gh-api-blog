@@ -21,7 +21,7 @@ export default {
 
   effects: {
     *fetch_by_id({ payload }, { call, put }) {
-      const articleurl = `https://api.github.com/repos/intVergil/vergilbox/issues/${payload}`
+      const articleurl = `/api/issues/${payload}`
       const article = yield call(blogService.query,articleurl);
       const commentsurl = `${articleurl}/comments`
       const comments = yield call(blogService.query,commentsurl);

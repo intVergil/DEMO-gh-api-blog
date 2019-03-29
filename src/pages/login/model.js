@@ -7,7 +7,6 @@ export default {
   state: {},
   subscriptions: {},
   effects: {
-
     * admin_login({ payload }, { select }) {
       yield select(state=>state)
       if (payload.username === 'admin' && payload.password === '123456'){
