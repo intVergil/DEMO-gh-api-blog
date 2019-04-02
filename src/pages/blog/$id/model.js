@@ -12,7 +12,7 @@ export default {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
         if ( pathname.startsWith('/blog') ) {
-            document.body.scrollIntoView()
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
             dispatch({ type: 'fetch_by_id', payload:pathname.split("/")[2]});
         }
       });
@@ -21,7 +21,7 @@ export default {
 
   effects: {
     *fetch_by_id({ payload }, { call, put }) {
-      const articleurl = `/api/issues/${payload}`
+      const articleurl = `/issues/${payload}`
       const article = yield call(blogService.query,articleurl);
       const commentsurl = `${articleurl}/comments`
       const comments = yield call(blogService.query,commentsurl);

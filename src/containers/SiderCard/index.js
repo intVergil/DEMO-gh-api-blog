@@ -22,12 +22,12 @@ function aboutMe (){
 function followMe (){
   return (
     <div>
-      <IconButton type="facebook" text="FACEBOOK" href="https://github.com/" />
-      <IconButton type="github" text="GITHUB" href="https://github.com/" />
-      <IconButton type="instagram" text="INSTAGRAM" href="https://github.com/" />
-      <IconButton type="slack" text="SLACK" href="https://github.com/" />
-      <IconButton type="wechat" text="WECHAT" href="https://github.com/" />
-      <IconButton type="mail" text="EMAIL" href="https://github.com/" />
+      <IconButton type="facebook" text="FACEBOOK"  />
+      <IconButton type="github" text="GITHUB"  />
+      <IconButton type="instagram" text="INSTAGRAM"  />
+      <IconButton type="slack" text="SLACK"  />
+      <IconButton type="wechat" text="WECHAT"  />
+      <IconButton type="mail" text="EMAIL"  />
     </div>
   )
 }
@@ -37,7 +37,7 @@ function archives (yearsData){
     <List
       dataSource={yearsData}
       renderItem={item =>
-        <Text>{item.year}({item.count})</Text>
+        <Text><Link to={`/archives#${item.year}`}>{item.year} ({item.count})</Link></Text>
       }
     />
   )
@@ -48,7 +48,7 @@ function labels (labels){
     <List
       dataSource={labels}
       renderItem={item =>
-        <Text>{item.name}</Text>
+        <Text><Link to={`/labels#${item.id}`}>{item.name} ({item.count})</Link></Text>
       }
     />
   )

@@ -31,7 +31,7 @@ const HeaderSearch = props => {
       <QueueAnim>
         {props.visable &&
           <div key="Search" style={{position:"absolute",right:0,top: 44,height: 42}}>
-            <Input  placeholder="input search text" 
+            <Input  placeholder="comming soon" 
                     onPressEnter={props.onClick}
                     style={InputStyle}/>
           </div>}

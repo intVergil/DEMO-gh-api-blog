@@ -10,7 +10,7 @@ import SiderCard from 'containers/SiderCard'
 function renderTimeLine (year, articles){
   const data = articles.filter( d => moment(d.updated_at).format('YYYY') === year )
   return (
-    <div key={year}>
+    <div key={year} id={year}>
       <Text size={32}>{year}</Text>
       <Timeline>
         {
@@ -29,6 +29,7 @@ function renderTimeLine (year, articles){
 }
 
 const AboutIndex = (props) => {
+  anchorElement(props.location.hash.split("#")[1])
   return (
     <div>
       <Text my={70} center font="72px Poppins" color="#555"
@@ -61,3 +62,17 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(AboutIndex);
+
+function anchorElement (anchor){
+  if (!!anchor) {
+    let anchorElement = document.getElementById(anchor);
+    if (anchorElement) {
+      window.scrollTo({top: anchorElement.offsetTop, 
+        behavior: "smooth" 
+    });
+    }
+  }
+  else {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }
+}

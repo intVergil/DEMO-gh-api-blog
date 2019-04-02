@@ -35,7 +35,7 @@ const ArticleList = ({ articles, name }) => (
 )
 
 const AboutIndex = (props) => {
-  console.log(props.articles)
+  anchorElement(props.location.hash.split("#")[1])
   return (
     <Spin spinning={props.loading}>
       <Text my={70} center font="72px Poppins" color="#555"
@@ -50,7 +50,7 @@ const AboutIndex = (props) => {
               itemLayout="vertical"
               dataSource={props.labels}
               renderItem={item => (
-                <List.Item key={item.id}>
+                <List.Item key={item.id} id={item.id}>
                   <ArticleList name={item.name}
                     articles={props.articles.filter( d => d.labels.find(l=>l.id === item.id))}/>
                 </List.Item>
@@ -71,8 +71,22 @@ function mapStateToProps(state) {
   return {
     articles,
     labels,
-    loading: state.loading.effects["blog/fetch_labels"]
+    loading: state.loading.effects["blog/fetch"]
   };
 }
 
 export default connect(mapStateToProps)(AboutIndex);
+
+function anchorElement (anchor){
+  if (!!anchor) {
+    let anchorElement = document.getElementById(anchor);
+    if (anchorElement) {
+      window.scrollTo({top: anchorElement.offsetTop, 
+        behavior: "smooth" 
+    });
+    }
+  }
+  else {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }
+}

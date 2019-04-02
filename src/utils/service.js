@@ -1,7 +1,9 @@
 import request from 'umi-request';
 
-export async function query(url,value) {
-  return request(url,{ params: value })
+const api = "https://api.github.com/repos/intVergil/gh-api-blog"
+
+export async function query( url, value ) {
+  return request(api + url,{ params: value })
 }
 
 // import axios from 'axios'
