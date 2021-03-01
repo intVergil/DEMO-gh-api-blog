@@ -4,8 +4,8 @@ import {resolve} from "path";
 export default {
   treeShaking: true,
   theme: "./src/theme/theme.js",
-  base: '/gh-api-blog/',
-  publicPath: '/gh-api-blog/',
+  base: '/DEMO-gh-api-blog/',
+  publicPath: '/DEMO-gh-api-blog/',
   alias: {
     utils: resolve(__dirname,"./src/utils"),
     assets: resolve(__dirname,"./src/assets"),
@@ -19,7 +19,7 @@ export default {
       antd: true,
       dva: true,
       dynamicImport: false,
-      title: 'gh-api-blog',
+      title: 'DEMO-gh-api-blog',
       dll: false,
       routes: {
         exclude: [
